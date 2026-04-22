@@ -1,0 +1,200 @@
+[
+{
+    "id": "PF-01",
+    "description": "Addition of positive integers",
+    "operand1": "5",
+    "operator": "plus",
+    "operand2": "7",
+    "expectedResult": "12",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-02",
+    "description": "Addition of negative integers",
+    "operand1": "-5",
+    "operator": "plus",
+    "operand2": "-10",
+    "expectedResult": "-15",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-03",
+    "description": "Subtraction resulting in positive",
+    "operand1": "15",
+    "operator": "minus",
+    "operand2": "5",
+    "expectedResult": "10",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-04",
+    "description": "Subtraction resulting in negative",
+    "operand1": "4",
+    "operator": "minus",
+    "operand2": "10",
+    "expectedResult": "-6",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-05",
+    "description": "Multiplication of positive numbers",
+    "operand1": "8",
+    "operator": "times",
+    "operand2": "4",
+    "expectedResult": "32",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-06",
+    "description": "Multiplication with negative numbers",
+    "operand1": "-5",
+    "operator": "times",
+    "operand2": "4",
+    "expectedResult": "-20",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-07",
+    "description": "Multiplication by Zero",
+    "operand1": "99",
+    "operator": "times",
+    "operand2": "0",
+    "expectedResult": "0",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-08",
+    "description": "Division with exact integer result",
+    "operand1": "20",
+    "operator": "divide",
+    "operand2": "4",
+    "expectedResult": "5",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-09",
+    "description": "Division resulting in decimal",
+    "operand1": "10",
+    "operator": "divide",
+    "operand2": "4",
+    "expectedResult": "2.5",
+    "resultType": "success"
+  },
+  {
+    "id": "PF-10",
+    "description": "Floating-point (Decimal) arithmetic",
+    "operand1": "2.5",
+    "operator": "plus",
+    "operand2": "1.2",
+    "expectedResult": "3.7",
+    "resultType": "success"
+  },
+  {
+    "id": "NF-01",
+    "description": "Division by Zero",
+    "operand1": "5",
+    "operator": "divide",
+    "operand2": "0",
+    "expectedResult": "∞", 
+    "resultType": "error_handling"
+  },
+  {
+    "id": "NF-02",
+    "description": "Missing Operand 1",
+    "operand1": "",
+    "operator": "plus",
+    "operand2": "5",
+    "expectedResult": "Error: Empty input",
+    "resultType": "validation"
+  },
+  {
+    "id": "NF-03",
+    "description": "Missing Operand 2",
+    "operand1": "5",
+    "operator": "plus",
+    "operand2": "",
+    "expectedResult": "Error: Empty input",
+    "resultType": "validation"
+  },
+  {
+    "id": "NF-04",
+    "description": "Missing Both Operands",
+    "operand1": "",
+    "operator": "plus",
+    "operand2": "",
+    "expectedResult": "Error: Empty input",
+    "resultType": "validation"
+  },
+  {
+    "id": "NF-05",
+    "description": "Alphabetical characters input",
+    "operand1": "abc",
+    "operator": "plus",
+    "operand2": "5",
+    "expectedResult": "Error: Unknown token: abc",
+    "resultType": "validation"
+  },
+  {
+    "id": "NF-06",
+    "description": "Special characters input",
+    "operand1": "!@#",
+    "operator": "plus",
+    "operand2": "$%%",
+    "expectedResult": "Error: Unknown token: !@#$%%",
+    "resultType": "validation"
+  },
+  {
+    "id": "NF-07",
+    "description": "Whitespace-only input",
+    "operand1": "   ",
+    "operator": "plus",
+    "operand2": "5",
+    "expectedResult": "Error: Empty input",
+    "resultType": "validation"
+  },
+  {
+    "id": "BV-01",
+    "description": "Very Large Numbers",
+    "operand1": "999999999999999",
+    "operator": "plus",
+    "operand2": "1",
+    "expectedResult": "1000000000000000",
+    "resultType": "success"
+  },
+  {
+    "id": "BV-02",
+    "description": "Very Small / High Precision Decimals",
+    "operand1": "0.00000000001",
+    "operator": "plus",
+    "operand2": "0.00000000002",
+    "expectedResult": "0.00000000003",
+    "resultType": "success"
+  },
+  {
+    "id": "BV-03",
+    "description": "Max length input validation",
+    "operand1": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+    "operator": "times",
+    "operand2": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+    "expectedResult": "∞",
+    "resultType": "extreme_boundary"
+  },
+  {
+    "id": "SEC-01",
+    "description": "Cross-Site Scripting (XSS) Injection",
+    "operand1": "<script>alert(1)</script>",
+    "operator": "plus",
+    "operand2": "5",
+    "expectedResult": "Unknown token: scriptalertscript",
+    "resultType": "security"
+  },
+  {
+    "id": "SEC-02",
+    "description": "SQL Injection Attempt",
+    "operand1": "' OR 1=1 --",
+    "operator": "plus",
+    "operand2": "5",
+    "expectedResult": "Error: Unknown token: or",
+    "resultType": "security"
+  }
+]

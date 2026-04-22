@@ -1,0 +1,25 @@
+{
+  "name": "calculator_ui-n-api_plawright_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report_v2 playwright test calc_v2_test.spec.ts --config=config/playwright.config.ts --reporter=html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yekoshy/Calculator_UI-n-API_Plawright_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yekoshy/Calculator_UI-n-API_Plawright_testing/issues"
+  },
+  "homepage": "https://github.com/yekoshy/Calculator_UI-n-API_Plawright_testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
