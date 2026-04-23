@@ -19,7 +19,7 @@
 
 ---
 
-## 🪲 Bugz
+## 🪲 Bug Reports
 
 ### Bug #1: Division by Zero - Incorrect Error Handling
 **Testcase ID:** NF-01  
@@ -43,7 +43,7 @@ The calculator fails to properly handle division by zero operations. The app ret
 **Severity:** Medium  
 
 **Description:**
-The calculator allows form submission with empty first operand without proper validation or error handling.
+The calculator allows form submission with empty first, second or both operand without proper validation or error handling.
 
 **Expected Behavior:**
 - **UI:** Display "Empty input" error message
@@ -51,7 +51,7 @@ The calculator allows form submission with empty first operand without proper va
 
 **Actual Behavior:**
 - Form accepts empty values without validation
-- API returns HTTP 400 instead of proper error response
+- API returns HTTP 200 instead of proper error response
 
 ---
 
@@ -129,7 +129,7 @@ if (!operand1 || operand1.trim() === '') {
   return { type: "INPUT_ERROR", value: "Empty input" };
 }
 
-if (!operand2 || operand1.trim() === '') {
+if (!operand2 || operand2.trim() === '') {
   return { type: "INPUT_ERROR", value: "Empty input" };
 }
 
@@ -140,7 +140,7 @@ if (!validNumberRegex.test(operand1)) {
 }
 
 if (!validNumberRegex.test(operand2)) {
-  return { type: "INPUT_ERROR", value: `Unknown token: ${operand1}` };
+  return { type: "INPUT_ERROR", value: `Unknown token: ${operand2}` };
 }
 ```
 
@@ -156,5 +156,6 @@ if (operator === 'divide' && right === 0) {
 Consider using a decimal arithmetic library:
 ```javascript
 const Decimal = require('decimal.js');
-const result = new Decimal(operand1).plus(operand2);
+const num1 = new Decimal(operand1);
+const num2 = new Decimal(operand2);
 ```
