@@ -76,7 +76,7 @@ npm install -D cross-env
 Playwright can generate test code for you by recording your browser actions.
 
 ### For UI Testing
-Run the following command, replacing `<urllink>` with the actual URL of the [Calculator micro app](https://testpages.eviltester.com/apps/calculator-api/form-calculator/):
+Run the following command, replacing `<url>` with the actual URL of the [Calculator micro app](https://testpages.eviltester.com/apps/calculator-api/form-calculator/):
 
 ```bash
 npx playwright codegen <urllink> -o calc_test.spec.ts
@@ -172,6 +172,7 @@ Instead of hardcoding the test data, we created a `testcases.json` file. We can 
 
 **For UI/API Testing:**
 ```typescript
+import testData from '../testcases.json'; 
 
 test.describe('Calculator UI Tests', () => {
   
