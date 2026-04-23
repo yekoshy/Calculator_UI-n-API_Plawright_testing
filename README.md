@@ -190,7 +190,7 @@ The configuration in `config/playwright.config.ts` controls:
 * **Retries**: how many times to retry failed tests automatically.
 * **Workers**: how many tests can run in parallel at the same time.
 
-*Note: **API tests**: APIs are not browser-specific.*
+*Note: **API tests** are not browser-specific.*
 
 
 ---
